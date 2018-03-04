@@ -37,13 +37,7 @@
     updatePlaces();
     $(function(){
         $("li").click(function(){
-            if($(this).hasClass("place")){
-                $(this).removeClass("place");
-                $(this).toggleClass("visited");
-            }else if($(this).hasClass("visited")){
-                $(this).removeClass("visited");
-                $(this).toggleClass("place");
-            }
+            $(this).toggleClass("visited");
             updatePlaces();
             if(total_not_visited == 0){
                 alert("There are no more places");
