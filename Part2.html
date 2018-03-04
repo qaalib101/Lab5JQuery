@@ -32,16 +32,11 @@
 <P>You have <span id="total_not_visited">0</span> place(s) left to visit</P>
 
 <script>
-    var total_visited = $(".visited").length;
-    var total_not_visited = $(".place").length;
     updatePlaces();
     $(function(){
         $("li").click(function(){
             $(this).toggleClass("visited");
             updatePlaces();
-            if(total_not_visited == 0){
-                alert("There are no more places");
-            }
         });
         // TODO update the numbers in total_visited and total_not_visited spans
 
@@ -57,6 +52,9 @@
         total_not_visited = $(".place").length;
         $("#total_visited").text(total_visited);
         $("#total_not_visited").text(total_not_visited);
+        if(total_not_visited == 0){
+            alert("There are no more places");
+        }
     }
 
 </script>
